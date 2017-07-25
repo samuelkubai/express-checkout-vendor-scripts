@@ -7,7 +7,7 @@ class Mula {
    *
    * @returns {Button}
    */
-  button() {
+  static button() {
     return Button;
   }
 
@@ -16,9 +16,9 @@ class Mula {
    *
    * @returns {Request}
    */
-  request() {
+  static request() {
     return Request;
   }
 }
 
-window.mula = new Mula();
+window.mula = Mula;
