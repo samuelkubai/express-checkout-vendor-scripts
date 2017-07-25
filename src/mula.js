@@ -3,11 +3,21 @@ import Request from 'components/Request';
 
 class Mula {
   /**
-   * mula constructor.
+   * Returns the button class.
+   *
+   * @returns {Button}
    */
-  constructor() {
-    this.button = Button;
-    this.request = Request;
+  button() {
+    return Button;
+  }
+
+  /**
+   * Returns the request class.
+   *
+   * @returns {Request}
+   */
+  request() {
+    return Request;
   }
 }
 
