@@ -1,7 +1,7 @@
 import Button from 'components/Button';
 import Request from 'components/Request';
 
-class mula {
+class Mula {
   /**
    * mula constructor.
    */
@@ -11,4 +11,4 @@ class mula {
   }
 }
 
-window.mula = mula;
+window.mula = new Mula();
