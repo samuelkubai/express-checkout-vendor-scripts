@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import Form from 'Libraries/FormManipulators';
+import Form from '../Libraries/FormManipulators';
 
 class Button {
   /**
@@ -27,6 +27,7 @@ class Button {
     // Add an onClick event listener to the pay with mula button.
     payButton.click(() => {
       configs.payment().then((response) => {
+        console.log(response);
         Button._submitFormToExpressCheckout(response);
       });
     });
@@ -41,9 +42,9 @@ class Button {
   static _submitFormToExpressCheckout(response) {
     let form = Form.createForm('mula-express-checkout-submission-form', 'http://localhost/checkout/', 'POST');
 
-    form = Form.addFormElement(form, 'text', 'countryCode', response.COUNTRY_CODE);
-    form = Form.addFormElement(form, 'text', 'accessKey', response.ACCESS_KEY);
-    form = Form.addFormElement(form, 'text', 'params', response.PARAMS);
+    form = Form.addFormElement(form, 'countryCode', response.COUNTRY_CODE, 'text');
+    form = Form.addFormElement(form, 'accessKey', response.ACCESS_KEY, 'text');
+    form = Form.addFormElement(form, 'params', response.PARAMS, 'text');
 
     Form.dynamicallySubmitForm(form);
   }
